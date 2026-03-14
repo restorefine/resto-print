@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /tmp/instructions_backup.txt \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/instructions.txt\")",
+      "Bash(cp -r /tmp/claude_backup \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/.claude\")",
+      "Bash(npm install:*)"
+    ]
+  }
+}

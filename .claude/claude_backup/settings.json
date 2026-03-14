@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes --force)",
+      "Bash(cp \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/instructions.txt\" /tmp/instructions_backup.txt)",
+      "Bash(rm \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/instructions.txt\")",
+      "Bash(mv \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/.claude\" /tmp/claude_backup)"
+    ]
+  }
+}
