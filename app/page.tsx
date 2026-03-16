@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import WhyRestoPrint from "@/components/WhyRestoPrint";
+import IndustriesStrip from "@/components/IndustriesStrip";
 import HowItWorks from "@/components/HowItWorks";
+import GuidesTeaser from "@/components/GuidesTeaser";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,7 +15,9 @@ export default function Home() {
         <Hero />
         <Services />
         <WhyRestoPrint />
+        <IndustriesStrip />
         <HowItWorks />
+        <GuidesTeaser />
         <Footer />
       </main>
     </>

@@ -17,7 +17,7 @@ export default function WhyRestoPrint() {
         className="text-4xl sm:text-6xl font-black uppercase tracking-tight mb-16 max-w-lg leading-none text-white"
       >
         Why<br />
-        <span className="font-normal italic text-[#dc2626]" style={{ fontFamily: "var(--font-playfair)" }}>
+        <span className="font-normal text-[#dc2626]" style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }}>
           RestoPrint
         </span>
       </motion.h2>
