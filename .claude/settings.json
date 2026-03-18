@@ -3,7 +3,10 @@
     "allow": [
       "Bash(cp /tmp/instructions_backup.txt \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/instructions.txt\")",
       "Bash(cp -r /tmp/claude_backup \"/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/.claude\")",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(node -e \"const pkg = require\\(''./node_modules/framer-motion/package.json''\\); console.log\\(pkg.version\\)\")",
+      "WebFetch(domain:www.instantprint.co.uk)",
+      "Bash(xargs sed:*)"
     ],
     "additionalDirectories": [
       "/Users/prabishdangi/Desktop/Personal/RestoRefine - UK/resto-print/app/services"

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Layers, Maximize2, Sparkles, BookText, ArrowRight } from "lucide-react";
-import { fadeUp } from "@/lib/constants";
+import { fadeUp, CMYK, CMYK_TEXT } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -42,30 +42,30 @@ export default function GuidesPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white text-[#09090b] overflow-x-hidden">
+      <main className="bg-white text-[#0f0f0f] overflow-x-hidden">
 
         {/* Hero */}
-        <section className="bg-[#131313] pt-40 pb-24 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        <section className="bg-white pt-40 pb-16 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={0}
-            className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4">
+            className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-4">
             Knowledge Base
           </motion.p>
           <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none mb-6">
+            className="text-5xl sm:text-7xl font-black text-[#0f0f0f] uppercase tracking-tight leading-none mb-6">
             Print{" "}
-            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
               Guides
             </em>
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="text-zinc-400 text-base max-w-xl leading-relaxed">
+            className="text-[#71717a] text-base max-w-xl leading-relaxed">
             Everything you need to understand printing — from paper weights to finishing options — explained simply.
           </motion.p>
         </section>
 
-        {/* Guide cards */}
+        {/* Guide cards — CMYK header blocks */}
         <section className="py-24 px-6 sm:px-14 lg:px-52">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {guides.map((g, i) => (
               <motion.div
                 key={g.href}
@@ -74,24 +74,37 @@ export default function GuidesPage() {
               >
                 <Link
                   href={g.href}
-                  className="group bg-white flex flex-col gap-6 p-10 h-full hover:bg-zinc-50 transition-colors"
+                  className="group bg-white border border-[#e8e7e2] flex flex-col h-full hover:border-[#0f0f0f] transition-colors overflow-hidden"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="text-zinc-400 group-hover:text-[#dc2626] transition-colors">
+                  {/* CMYK colour header block */}
+                  <div
+                    className="flex items-center justify-between px-8 py-6"
+                    style={{ backgroundColor: CMYK[i % 4] }}
+                  >
+                    <div style={{ color: CMYK_TEXT[i % 4] }}>
                       {g.icon}
                     </div>
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-zinc-300">0{i + 1}</span>
+                    <span
+                      className="text-[10px] uppercase tracking-[0.3em] font-black"
+                      style={{ color: CMYK_TEXT[i % 4] }}
+                    >
+                      0{i + 1}
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-3">{g.label}</p>
-                    <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-[#dc2626] transition-colors">
-                      {g.title}
-                    </h2>
-                    <p className="text-sm text-zinc-500 leading-relaxed">{g.desc}</p>
-                  </div>
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-zinc-400 group-hover:text-[#09090b] transition-colors">
-                    Read Guide
-                    <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
+
+                  {/* Card content */}
+                  <div className="flex flex-col gap-4 p-8 flex-1">
+                    <div className="flex-1">
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-3">{g.label}</p>
+                      <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-[#CC0088] transition-colors">
+                        {g.title}
+                      </h2>
+                      <p className="text-sm text-[#71717a] leading-relaxed">{g.desc}</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[#71717a] group-hover:text-[#0f0f0f] transition-colors">
+                      Read Guide
+                      <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               </motion.div>

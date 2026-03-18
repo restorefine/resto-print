@@ -45,9 +45,9 @@ function SizePreview({ name, dimensions }: { name: string; dimensions: string })
   const d = sizeMM[name] ?? Object.entries(sizeMM).find(([k]) => name.toLowerCase().includes(k.toLowerCase()))?.[1];
   if (!d) {
     return (
-      <div className="border border-zinc-100 p-4 hover:border-zinc-300 transition-colors">
+      <div className="border border-[#e8e7e2] p-4 hover:border-[#0f0f0f] transition-colors">
         <p className="text-base font-black uppercase tracking-tight mb-1">{name}</p>
-        <p className="text-xs text-zinc-400 font-mono">{dimensions}</p>
+        <p className="text-xs text-[#71717a] font-mono">{dimensions}</p>
       </div>
     );
   }
@@ -60,20 +60,20 @@ function SizePreview({ name, dimensions }: { name: string; dimensions: string })
   const hIn = toIn(d.h);
 
   return (
-    <div className="border border-zinc-100 p-4 hover:border-zinc-300 transition-colors flex flex-col gap-3">
+    <div className="border border-[#e8e7e2] p-4 hover:border-[#0f0f0f] transition-colors flex flex-col gap-3">
       {/* Paper shape */}
       <div className="flex items-end gap-2">
         <div
-          className="border border-zinc-400 bg-zinc-50 shrink-0"
+          className="border border-[#e8e7e2] bg-[#f5f4f0] shrink-0"
           style={{ width: wPx, height: hPx }}
         />
-        <span className="text-[9px] font-mono text-zinc-400 leading-tight">
+        <span className="text-[9px] font-mono text-[#71717a] leading-tight">
           {wIn}&Prime;<br />{hIn}&Prime;
         </span>
       </div>
       <div>
         <p className="text-sm font-black uppercase tracking-tight mb-0.5">{name}</p>
-        <p className="text-[10px] font-mono text-zinc-400">{wIn} × {hIn}&Prime;</p>
+        <p className="text-[10px] font-mono text-[#71717a]">{wIn} × {hIn}&Prime;</p>
       </div>
     </div>
   );
@@ -102,7 +102,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         <main className="bg-white min-h-screen flex items-center justify-center px-6">
           <div className="text-center">
             <h1 className="text-4xl font-black uppercase mb-4">Service not found</h1>
-            <Link href="/services" className="text-[#dc2626] text-sm uppercase tracking-widest">
+            <Link href="/services" className="text-[#CC0088] text-sm uppercase tracking-widest">
               ← Back to Services
             </Link>
           </div>
@@ -117,10 +117,10 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
   return (
     <>
       <Navbar />
-      <main className="bg-white text-[#09090b] overflow-x-hidden">
+      <main className="bg-white text-[#0f0f0f] overflow-x-hidden">
 
-        {/* Hero — dark */}
-        <section className="bg-[#131313] pt-40 pb-24 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        {/* Hero — white */}
+        <section className="bg-white pt-40 pb-16 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <Breadcrumb crumbs={[
               { label: "Home", href: "/" },
@@ -132,33 +132,33 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           <div className="flex items-start gap-6">
             <motion.div
               variants={fadeUp} initial="hidden" animate="show" custom={1}
-              className="text-[#dc2626] mt-1 hidden sm:block"
+              className="text-[#CC0088] mt-1 hidden sm:block"
             >
               {iconMap[s.icon]}
             </motion.div>
             <div>
               <motion.p
                 variants={fadeUp} initial="hidden" animate="show" custom={1}
-                className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4"
+                className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-4"
               >
                 Printing Service
               </motion.p>
               <motion.h1
                 variants={fadeUp} initial="hidden" animate="show" custom={2}
-                className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none mb-4"
+                className="text-5xl sm:text-7xl font-black text-[#0f0f0f] uppercase tracking-tight leading-none mb-4"
               >
                 {s.title}
               </motion.h1>
               <motion.p
                 variants={fadeUp} initial="hidden" animate="show" custom={3}
-                className="text-lg sm:text-xl text-[#dc2626] mb-6 italic"
+                className="text-lg sm:text-xl text-[#CC0088] mb-6 italic"
                 style={{ fontFamily: "'Times New Roman', Times, serif" }}
               >
                 {s.tagline}
               </motion.p>
               <motion.p
                 variants={fadeUp} initial="hidden" animate="show" custom={4}
-                className="text-zinc-400 text-base max-w-2xl leading-relaxed"
+                className="text-[#71717a] text-base max-w-2xl leading-relaxed"
               >
                 {s.desc}
               </motion.p>
@@ -166,16 +166,16 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </div>
         </section>
 
-        {/* Materials + Sizes — white */}
-        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-zinc-100">
+        {/* Materials + Sizes — off-white */}
+        <section className="bg-[#f5f4f0] py-20 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-6">Materials</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-6">Materials</p>
               <h2 className="text-2xl font-black uppercase tracking-tight mb-8">Paper & Stock Options</h2>
               <div className="flex flex-col">
                 {s.materials.map((m) => (
-                  <div key={m} className="flex items-center gap-4 py-3.5 border-b border-zinc-100 last:border-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626] shrink-0" />
+                  <div key={m} className="flex items-center gap-4 py-3.5 border-b border-[#e8e7e2] last:border-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#CC0088] shrink-0" />
                     <span className="text-sm font-medium">{m}</span>
                   </div>
                 ))}
@@ -183,7 +183,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             </motion.div>
 
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }} custom={1}>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-6">Sizes</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-6">Sizes</p>
               <h2 className="text-2xl font-black uppercase tracking-tight mb-8">Available Dimensions</h2>
               <div className="grid grid-cols-2 gap-3">
                 {s.sizes.map((sz) => (
@@ -194,18 +194,18 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </div>
         </section>
 
-        {/* Finishing options — dark */}
-        <section className="bg-[#131313] py-20 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        {/* Finishing options — white */}
+        <section className="bg-white py-20 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-6">Finishing</p>
-            <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-10">Finishing Options</h2>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-6">Finishing</p>
+            <h2 className="text-2xl font-black text-[#0f0f0f] uppercase tracking-tight mb-10">Finishing Options</h2>
           </motion.div>
           <div className="flex flex-wrap gap-3">
             {s.finishes.map((f, i) => (
               <motion.span
                 key={f}
                 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i * 0.5}
-                className="px-4 py-2 border border-zinc-700 text-zinc-300 text-[11px] uppercase tracking-[0.2em] hover:border-white hover:text-white transition-colors"
+                className="px-4 py-2 border border-[#e8e7e2] text-[#71717a] text-[11px] uppercase tracking-[0.2em] hover:border-[#0f0f0f] hover:text-[#0f0f0f] transition-colors"
               >
                 {f}
               </motion.span>
@@ -213,16 +213,16 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </div>
         </section>
 
-        {/* Use cases + Industries — white */}
-        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-zinc-100">
+        {/* Use cases + Industries — off-white */}
+        <section className="bg-[#f5f4f0] py-20 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-6">Use Cases</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-6">Use Cases</p>
               <h2 className="text-2xl font-black uppercase tracking-tight mb-8">What It&rsquo;s Used For</h2>
               <ul className="flex flex-col gap-3">
                 {s.useCases.map((u) => (
-                  <li key={u} className="flex items-start gap-3 text-sm text-zinc-600">
-                    <ArrowRight size={13} className="text-[#dc2626] mt-0.5 shrink-0" />
+                  <li key={u} className="flex items-start gap-3 text-sm text-[#71717a]">
+                    <ArrowRight size={13} className="text-[#CC0088] mt-0.5 shrink-0" />
                     {u}
                   </li>
                 ))}
@@ -230,13 +230,13 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             </motion.div>
 
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }} custom={1}>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-6">Industries</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-6">Industries</p>
               <h2 className="text-2xl font-black uppercase tracking-tight mb-8">Who Uses This</h2>
               <div className="flex flex-wrap gap-2">
                 {s.industries.map((ind) => (
                   <span
                     key={ind}
-                    className="px-4 py-2 bg-zinc-50 border border-zinc-100 text-[11px] uppercase tracking-[0.2em] text-zinc-600 font-medium"
+                    className="px-4 py-2 bg-white border border-[#e8e7e2] text-[11px] uppercase tracking-[0.2em] text-[#71717a] font-medium"
                   >
                     {ind}
                   </span>
@@ -246,14 +246,14 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </div>
         </section>
 
-        {/* CTA — dark */}
-        <section className="bg-[#131313] py-20 px-6 sm:px-14 lg:px-52">
+        {/* CTA — off-white */}
+        <section className="bg-[#f5f4f0] py-20 px-6 sm:px-14 lg:px-52 border-t border-[#e8e7e2]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-3">Get Started</p>
-              <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight leading-tight">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-3">Get Started</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#0f0f0f] uppercase tracking-tight leading-tight">
                 Ready to order{" "}
-                <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+                <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
                   {s.title}?
                 </em>
               </h2>
@@ -261,7 +261,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Link
                 href="/order"
-                className="font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-white text-[#09090b] hover:bg-zinc-200 transition-colors text-center"
+                className="font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-[#0f0f0f] text-white hover:bg-zinc-800 transition-colors text-center"
               >
                 Order Now
               </Link>

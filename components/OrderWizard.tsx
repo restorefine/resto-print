@@ -109,12 +109,12 @@ export default function OrderWizard({ initialService, onClose }: WizardProps) {
         <div className="px-5 sm:px-8 pt-4 sm:pt-8 pb-4 sm:pb-6 border-b border-zinc-100 shrink-0">
           <div className="flex items-start justify-between mb-5">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-1">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-1">
                 Enquire Now
               </p>
               <h2 className="text-xl sm:text-3xl font-black tracking-tight leading-tight">
                 Tell Us About{" "}
-                <span className="italic font-normal text-[#dc2626]" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                <span className="italic font-normal text-[#CC0088]" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                   Your Order
                 </span>
               </h2>
@@ -132,20 +132,20 @@ export default function OrderWizard({ initialService, onClose }: WizardProps) {
                   <div
                     className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-black border-2 transition-colors ${
                       i < step
-                        ? "bg-[#dc2626] border-[#dc2626] text-white"
+                        ? "bg-[#CC0088] border-[#CC0088] text-white"
                         : i === step
-                        ? "bg-white border-[#dc2626] text-[#dc2626]"
+                        ? "bg-white border-[#CC0088] text-[#CC0088]"
                         : "bg-zinc-100 border-zinc-200 text-zinc-400"
                     }`}
                   >
                     {i < step ? <Check size={11} /> : i + 1}
                   </div>
-                  <span className={`hidden sm:block text-[9px] uppercase tracking-[0.15em] font-bold ${i === step ? "text-[#dc2626]" : "text-zinc-400"}`}>
+                  <span className={`hidden sm:block text-[9px] uppercase tracking-[0.15em] font-bold ${i === step ? "text-[#CC0088]" : "text-zinc-400"}`}>
                     {label}
                   </span>
                 </div>
                 {i < STEP_LABELS.length - 1 && (
-                  <div className={`flex-1 h-px mx-1.5 sm:mx-2 sm:mb-4 ${i < step ? "bg-[#dc2626]" : "bg-zinc-200"}`} />
+                  <div className={`flex-1 h-px mx-1.5 sm:mx-2 sm:mb-4 ${i < step ? "bg-[#CC0088]" : "bg-zinc-200"}`} />
                 )}
               </div>
             ))}
@@ -224,7 +224,7 @@ const SERVICE_OPTIONS = [
 function StepService({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-2">Step 1 of 5</p>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-2">Step 1 of 5</p>
       <h3 className="text-lg sm:text-xl font-black tracking-tight mb-4">What are you looking for?</h3>
       <div className="grid grid-cols-2 gap-2 sm:gap-3">
         {SERVICE_OPTIONS.map((s) => (
@@ -232,7 +232,7 @@ function StepService({ value, onChange }: { value: string; onChange: (v: string)
             key={s.title}
             onClick={() => onChange(s.title)}
             className={`text-left p-3 sm:p-4 rounded-xl border transition-all ${
-              value === s.title ? "border-[#dc2626] bg-red-50" : "border-zinc-200 hover:border-zinc-400"
+              value === s.title ? "border-[#CC0088] bg-red-50" : "border-zinc-200 hover:border-zinc-400"
             }`}
           >
             <p className="font-black text-sm tracking-tight">{s.title}</p>
@@ -247,7 +247,7 @@ function StepService({ value, onChange }: { value: string; onChange: (v: string)
 function StepType({ form, set }: { form: FormData; set: (k: keyof FormData, v: string) => void }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-2">Step 2 of 5</p>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-2">Step 2 of 5</p>
       <h3 className="text-lg sm:text-xl font-black tracking-tight mb-4">Paper, size & finish</h3>
       <div className="space-y-4">
         <OptionRow label="Paper Type" options={PAPER_TYPES} value={form.paperType} onChange={(v) => set("paperType", v)} />
@@ -261,7 +261,7 @@ function StepType({ form, set }: { form: FormData; set: (k: keyof FormData, v: s
 function StepQuantity({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-2">Step 3 of 5</p>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-2">Step 3 of 5</p>
       <h3 className="text-lg sm:text-xl font-black tracking-tight mb-4">How many do you need?</h3>
       <div className="flex flex-wrap gap-2 sm:gap-3">
         {QUANTITIES.map((q) => (
@@ -270,7 +270,7 @@ function StepQuantity({ value, onChange }: { value: string; onChange: (v: string
             onClick={() => onChange(q)}
             className={`px-4 py-3 rounded-xl border font-black text-sm transition-all ${
               value === q
-                ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
+                ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
                 : "border-zinc-200 hover:border-zinc-400 text-zinc-700"
             }`}
           >
@@ -285,7 +285,7 @@ function StepQuantity({ value, onChange }: { value: string; onChange: (v: string
 function StepTimeline({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-2">Step 4 of 5</p>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-2">Step 4 of 5</p>
       <h3 className="text-lg sm:text-xl font-black tracking-tight mb-4">When do you need it?</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
         {TIMELINES.map((t) => (
@@ -294,7 +294,7 @@ function StepTimeline({ value, onChange }: { value: string; onChange: (v: string
             onClick={() => onChange(t)}
             className={`text-left px-4 py-3 sm:px-5 sm:py-4 rounded-xl border font-black text-sm transition-all ${
               value === t
-                ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
+                ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
                 : "border-zinc-200 hover:border-zinc-400 text-zinc-700"
             }`}
           >
@@ -309,7 +309,7 @@ function StepTimeline({ value, onChange }: { value: string; onChange: (v: string
 function StepDetails({ form, set }: { form: FormData; set: (k: keyof FormData, v: string) => void }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-2">Step 5 of 5</p>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] font-bold mb-2">Step 5 of 5</p>
       <h3 className="text-lg sm:text-xl font-black tracking-tight mb-4">Your details</h3>
       <div className="space-y-3">
         <input
@@ -317,21 +317,21 @@ function StepDetails({ form, set }: { form: FormData; set: (k: keyof FormData, v
           placeholder="Your name *"
           value={form.name}
           onChange={(e) => set("name", e.target.value)}
-          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#dc2626] transition-colors"
+          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#CC0088] transition-colors"
         />
         <input
           type="tel"
           placeholder="Phone number *"
           value={form.phone}
           onChange={(e) => set("phone", e.target.value)}
-          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#dc2626] transition-colors"
+          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#CC0088] transition-colors"
         />
         <textarea
           placeholder="Any extra notes or design details? (optional)"
           value={form.notes}
           onChange={(e) => set("notes", e.target.value)}
           rows={3}
-          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#dc2626] transition-colors resize-none"
+          className="w-full border border-zinc-200 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#CC0088] transition-colors resize-none"
         />
       </div>
     </div>
@@ -356,7 +356,7 @@ function OptionRow({ label, options, value, onChange }: {
             onClick={() => onChange(o)}
             className={`px-3 py-2 sm:px-4 rounded-lg border text-xs font-black transition-all ${
               value === o
-                ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
+                ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
                 : "border-zinc-200 hover:border-zinc-400 text-zinc-700"
             }`}
           >

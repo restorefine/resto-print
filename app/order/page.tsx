@@ -103,13 +103,13 @@ export default function OrderPage() {
       {DOTS.map((d, i) => (
         <span
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-[#dc2626] opacity-30 pointer-events-none"
+          className="absolute w-1 h-1 rounded-full bg-[#CC0088] opacity-30 pointer-events-none"
           style={{ top: d.top, left: d.left }}
         />
       ))}
 
       {/* Navbar */}
-      <header className="relative z-10 flex items-center justify-between px-6 sm:px-14 lg:px-52 h-16 border-b border-zinc-100">
+      <header className="relative z-10 flex items-center justify-between px-6 sm:px-14 lg:px-52 h-16 border-b border-[#e8e7e2]">
         <Link href="/">
           <Image
             src="/resto-print-logo-black.png"
@@ -122,7 +122,7 @@ export default function OrderPage() {
         </Link>
         <Link
           href="/"
-          className="text-[10px] uppercase tracking-[0.3em] text-zinc-400 hover:text-zinc-900 transition-colors"
+          className="text-[10px] uppercase tracking-[0.3em] text-[#71717a] hover:text-[#0f0f0f] transition-colors"
         >
           ← Back
         </Link>
@@ -132,7 +132,7 @@ export default function OrderPage() {
       <div className="relative z-10 px-6 sm:px-14 lg:px-52 py-12 sm:py-16">
 
         {/* Heading */}
-        <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-3">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] font-bold mb-3">
           Enquire Now
         </p>
         <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-10">
@@ -153,23 +153,23 @@ export default function OrderPage() {
                 <div
                   className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-black border-2 transition-all ${
                     i < step
-                      ? "bg-[#dc2626] border-[#dc2626] text-white"
+                      ? "bg-[#CC0088] border-[#CC0088] text-white"
                       : i === step
                       ? "bg-white border-[#09090b] text-[#09090b] shadow-[0_0_0_3px_rgba(220,38,38,0.2)]"
-                      : "bg-zinc-100 border-zinc-200 text-zinc-400"
+                      : "bg-[#f5f4f0] border-[#e8e7e2] text-[#71717a]"
                   }`}
                 >
                   {i < step ? <Check size={14} /> : i + 1}
                 </div>
                 <span className={`text-[9px] uppercase tracking-[0.2em] font-bold ${
-                  i === step ? "text-[#09090b]" : i < step ? "text-[#dc2626]" : "text-zinc-400"
+                  i === step ? "text-[#0f0f0f]" : i < step ? "text-[#CC0088]" : "text-[#71717a]"
                 }`}>
                   {s.label}
                 </span>
               </div>
               {i < STEPS.length - 1 && (
                 <div className={`flex-1 h-px mx-3 mb-5 transition-colors ${
-                  i < step ? "bg-[#dc2626]" : "bg-zinc-200"
+                  i < step ? "bg-[#CC0088]" : "bg-[#e8e7e2]"
                 }`} />
               )}
             </div>
@@ -189,7 +189,7 @@ export default function OrderPage() {
                 <Check size={28} className="text-white" />
               </div>
               <h2 className="text-3xl font-black uppercase tracking-tight mb-3">Order Sent!</h2>
-              <p className="text-zinc-500 text-sm mb-8 max-w-xs">
+              <p className="text-[#71717a] text-sm mb-8 max-w-xs">
                 Your details have been sent via WhatsApp. We&apos;ll be in touch shortly.
               </p>
               <Link
@@ -208,7 +208,7 @@ export default function OrderPage() {
               transition={{ duration: 0.2 }}
             >
               {/* Step label */}
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] font-bold mb-3">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] font-bold mb-3">
                 Step {step + 1} of {STEPS.length}
               </p>
 
@@ -224,8 +224,8 @@ export default function OrderPage() {
                         onClick={() => set("service", s.title)}
                         className={`text-left p-5 rounded-2xl border transition-all ${
                           form.service === s.title
-                            ? "border-[#dc2626] bg-red-50"
-                            : "border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-sm"
+                            ? "border-[#CC0088] bg-red-50"
+                            : "border-[#e8e7e2] bg-white hover:border-[#0f0f0f] hover:shadow-sm"
                         }`}
                       >
                         <p className="font-black text-base tracking-tight">{s.title}</p>
@@ -261,8 +261,8 @@ export default function OrderPage() {
                         onClick={() => set("quantity", q)}
                         className={`px-6 py-3 rounded-2xl border font-black text-sm transition-all ${
                           form.quantity === q
-                            ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
-                            : "border-zinc-200 bg-white hover:border-zinc-400 text-zinc-700"
+                            ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
+                            : "border-[#e8e7e2] bg-white hover:border-[#0f0f0f] text-[#71717a]"
                         }`}
                       >
                         {q}
@@ -284,8 +284,8 @@ export default function OrderPage() {
                         onClick={() => set("timeline", t)}
                         className={`text-left px-5 py-4 rounded-2xl border font-black text-sm transition-all ${
                           form.timeline === t
-                            ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
-                            : "border-zinc-200 bg-white hover:border-zinc-400 text-zinc-700"
+                            ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
+                            : "border-[#e8e7e2] bg-white hover:border-[#0f0f0f] text-[#71717a]"
                         }`}
                       >
                         {t}
@@ -306,21 +306,21 @@ export default function OrderPage() {
                       placeholder="Your name *"
                       value={form.name}
                       onChange={(e) => set("name", e.target.value)}
-                      className="w-full border border-zinc-200 rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#09090b] transition-colors bg-white"
+                      className="w-full border border-[#e8e7e2] rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#0f0f0f] transition-colors bg-white"
                     />
                     <input
                       type="tel"
                       placeholder="Phone number *"
                       value={form.phone}
                       onChange={(e) => set("phone", e.target.value)}
-                      className="w-full border border-zinc-200 rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#09090b] transition-colors bg-white"
+                      className="w-full border border-[#e8e7e2] rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#0f0f0f] transition-colors bg-white"
                     />
                     <textarea
                       placeholder="Any extra notes or design details? (optional)"
                       value={form.notes}
                       onChange={(e) => set("notes", e.target.value)}
                       rows={4}
-                      className="w-full border border-zinc-200 rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#09090b] transition-colors resize-none bg-white"
+                      className="w-full border border-[#e8e7e2] rounded-2xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#0f0f0f] transition-colors resize-none bg-white"
                     />
                   </div>
                 </>
@@ -331,11 +331,11 @@ export default function OrderPage() {
 
         {/* Navigation */}
         {!submitted && (
-          <div className="flex justify-between items-center mt-12 pt-6 border-t border-zinc-100">
+          <div className="flex justify-between items-center mt-12 pt-6 border-t border-[#e8e7e2]">
             <button
               onClick={() => setStep((s) => s - 1)}
               disabled={step === 0}
-              className="text-sm font-black uppercase tracking-widest text-zinc-400 hover:text-zinc-900 disabled:opacity-0 transition-colors"
+              className="text-sm font-black uppercase tracking-widest text-[#71717a] hover:text-[#0f0f0f] disabled:opacity-0 transition-colors"
             >
               ← Back
             </button>
@@ -373,7 +373,7 @@ function OptionRow({ label, options, value, onChange }: {
 }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-bold mb-2">{label}</p>
+      <p className="text-[10px] uppercase tracking-[0.25em] text-[#71717a] font-bold mb-2">{label}</p>
       <div className="flex flex-wrap gap-2">
         {options.map((o) => (
           <button
@@ -381,8 +381,8 @@ function OptionRow({ label, options, value, onChange }: {
             onClick={() => onChange(o)}
             className={`px-5 py-2.5 rounded-xl border text-sm font-black transition-all ${
               value === o
-                ? "border-[#dc2626] bg-red-50 text-[#dc2626]"
-                : "border-zinc-200 bg-white hover:border-zinc-400 text-zinc-700"
+                ? "border-[#CC0088] bg-red-50 text-[#CC0088]"
+                : "border-[#e8e7e2] bg-white hover:border-[#0f0f0f] text-[#71717a]"
             }`}
           >
             {o}

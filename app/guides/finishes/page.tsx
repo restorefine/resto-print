@@ -54,15 +54,15 @@ function FinishCard({ f, i }: { f: typeof FINISHES[number]; i: number }) {
       key={f.name}
       variants={fadeUp} initial="hidden" whileInView="show"
       viewport={{ once: true, margin: "-60px" }} custom={i % 2}
-      className="bg-white border border-zinc-100 hover:border-zinc-300 transition-colors flex flex-col gap-6 p-8"
+      className="bg-white border border-[#e8e7e2] hover:border-[#0f0f0f] transition-colors flex flex-col gap-6 p-8"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Texture preview — full width, tall */}
       <div
         className={`relative w-full h-36 rounded-sm overflow-hidden ${
-          textureBg[f.name] ?? "bg-zinc-100"
-        } ${f.name === "Die Cutting" ? "border-2 border-dashed border-zinc-300" : ""}`}
+          textureBg[f.name] ?? "bg-[#f5f4f0]"
+        } ${f.name === "Die Cutting" ? "border-2 border-dashed border-[#e8e7e2]" : ""}`}
       >
         {/* Embossing raised-text illusion */}
         {f.name === "Embossing" && (
@@ -145,17 +145,17 @@ function FinishCard({ f, i }: { f: typeof FINISHES[number]; i: number }) {
       <div>
         <div className="flex items-start justify-between gap-4 mb-3">
           <h3 className="text-xl font-black uppercase tracking-tight">{f.name}</h3>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-300 shrink-0 pt-1">0{i + 1}</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#71717a] shrink-0 pt-1">0{i + 1}</span>
         </div>
-        <p className="text-base text-zinc-500 leading-relaxed mb-5">{f.desc}</p>
+        <p className="text-base text-[#71717a] leading-relaxed mb-5">{f.desc}</p>
         <div className="flex flex-col gap-2.5">
           <div className="flex items-start gap-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#dc2626] shrink-0 pt-0.5 min-w-12">Feel</span>
-            <span className="text-sm text-zinc-600">{f.feel}</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#CC0088] shrink-0 pt-0.5 min-w-12">Feel</span>
+            <span className="text-sm text-[#71717a]">{f.feel}</span>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#dc2626] shrink-0 pt-0.5 min-w-12">Best For</span>
-            <span className="text-sm text-zinc-600">{f.bestFor}</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#CC0088] shrink-0 pt-0.5 min-w-12">Best For</span>
+            <span className="text-sm text-[#71717a]">{f.bestFor}</span>
           </div>
         </div>
       </div>
@@ -167,10 +167,10 @@ export default function FinishesGuidePage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white text-[#09090b] overflow-x-hidden">
+      <main className="bg-white text-[#0f0f0f] overflow-x-hidden">
 
         {/* Hero */}
-        <section className="bg-[#131313] pt-40 pb-24 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        <section className="bg-white pt-40 pb-16 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <Breadcrumb crumbs={[
               { label: "Home", href: "/" },
@@ -179,18 +179,18 @@ export default function FinishesGuidePage() {
             ]} />
           </motion.div>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4">
+            className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-4">
             Guide · Finishing
           </motion.p>
           <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none mb-6">
+            className="text-5xl sm:text-7xl font-black text-[#0f0f0f] uppercase tracking-tight leading-none mb-6">
             Finishing{" "}
-            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
               Techniques
             </em>
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={3}
-            className="text-zinc-400 text-base max-w-xl leading-relaxed">
+            className="text-[#71717a] text-base max-w-xl leading-relaxed">
             The right finish transforms a good print into an exceptional one. Hover each finish to see the effect in action.
           </motion.p>
         </section>
@@ -205,12 +205,12 @@ export default function FinishesGuidePage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#131313] py-16 px-6 sm:px-14 lg:px-52 border-t border-zinc-800">
+        <section className="bg-[#f5f4f0] py-16 px-6 sm:px-14 lg:px-52 border-t border-[#e8e7e2]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="text-zinc-400 text-sm max-w-md">
-              Unsure which finish suits your project? <strong className="text-white">Ask us — we&rsquo;ll guide you.</strong>
+            <p className="text-[#71717a] text-sm max-w-md">
+              Unsure which finish suits your project? <strong className="text-[#0f0f0f]">Ask us — we&rsquo;ll guide you.</strong>
             </p>
-            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-white text-[#09090b] hover:bg-zinc-200 transition-colors">
+            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-[#0f0f0f] text-white hover:bg-zinc-800 transition-colors">
               Get a Quote
             </Link>
           </div>

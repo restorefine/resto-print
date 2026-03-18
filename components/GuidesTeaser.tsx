@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Layers, Maximize2, Sparkles, BookText, ArrowRight } from "lucide-react";
-import { fadeUp } from "@/lib/constants";
+import { fadeUp, CMYK, CMYK_TEXT } from "@/lib/constants";
 
 const guides = [
-  { href: "/guides/paper",       icon: <Layers size={18} />,    label: "Paper Types",          desc: "Gloss, silk, uncoated & more" },
-  { href: "/guides/sizes",       icon: <Maximize2 size={18} />, label: "Print Sizes",          desc: "A0 to business card, explained" },
-  { href: "/guides/finishes",    icon: <Sparkles size={18} />,  label: "Finishing Techniques", desc: "Lamination, foil, spot UV & more" },
-  { href: "/guides/terminology", icon: <BookText size={18} />,  label: "Terminology",          desc: "CMYK, DPI, bleed — decoded" },
+  { href: "/guides/paper",       icon: Layers,    label: "Paper Types",          desc: "Gloss, silk, uncoated & more",       tag: "C" },
+  { href: "/guides/sizes",       icon: Maximize2, label: "Print Sizes",          desc: "A0 to business card, explained",     tag: "M" },
+  { href: "/guides/finishes",    icon: Sparkles,  label: "Finishing Techniques", desc: "Lamination, foil, spot UV & more",   tag: "Y" },
+  { href: "/guides/terminology", icon: BookText,  label: "Terminology",          desc: "CMYK, DPI, bleed — decoded",         tag: "K" },
 ];
 
 export default function GuidesTeaser() {
@@ -21,7 +21,7 @@ export default function GuidesTeaser() {
           <motion.p
             variants={fadeUp} initial="hidden" whileInView="show"
             viewport={{ once: true }} custom={0}
-            className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4"
+            className="text-[10px] uppercase tracking-[0.3em] text-[#CC0088] mb-4"
           >
             Knowledge Base
           </motion.p>
@@ -31,7 +31,7 @@ export default function GuidesTeaser() {
             className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight leading-none"
           >
             Print{" "}
-            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
               Guides
             </em>
           </motion.h2>
@@ -47,29 +47,50 @@ export default function GuidesTeaser() {
         </motion.div>
       </div>
 
-      {/* 2×2 grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-800">
-        {guides.map((g, i) => (
-          <motion.div
-            key={g.href}
-            variants={fadeUp} initial="hidden" whileInView="show"
-            viewport={{ once: true, margin: "-60px" }} custom={i * 0.1}
-          >
-            <Link
-              href={g.href}
-              className="group bg-[#131313] flex flex-col gap-4 p-8 h-full hover:bg-zinc-900 transition-colors"
+      {/* 4-card grid — each card gets a CMYK colour */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {guides.map((g, i) => {
+          const Icon = g.icon;
+          const bg = CMYK[i];
+          const fg = CMYK_TEXT[i];
+          return (
+            <motion.div
+              key={g.href}
+              variants={fadeUp} initial="hidden" whileInView="show"
+              viewport={{ once: true, margin: "-60px" }} custom={i * 0.1}
             >
-              <div className="text-zinc-600 group-hover:text-[#dc2626] transition-colors">
-                {g.icon}
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-500 mb-2">{g.label}</p>
-                <p className="text-sm text-zinc-400 leading-relaxed">{g.desc}</p>
-              </div>
-              <ArrowRight size={13} className="text-zinc-700 group-hover:text-[#dc2626] group-hover:translate-x-1 transition-all mt-auto" />
-            </Link>
-          </motion.div>
-        ))}
+              <Link
+                href={g.href}
+                className="group flex flex-col h-full overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-colors"
+              >
+                {/* Coloured CMYK header block */}
+                <div
+                  className="flex items-end justify-between px-6 pt-8 pb-5"
+                  style={{ background: bg }}
+                >
+                  <Icon size={28} strokeWidth={1.5} color={fg} />
+                  <span
+                    className="text-4xl font-black leading-none select-none"
+                    style={{ color: fg, opacity: 0.25 }}
+                  >
+                    {g.tag}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="bg-[#1a1a1a] flex flex-col gap-3 p-6 flex-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">{g.label}</p>
+                  <p className="text-sm text-zinc-500 leading-relaxed">{g.desc}</p>
+                  <ArrowRight
+                    size={13}
+                    className="mt-auto transition-all group-hover:translate-x-1"
+                    style={{ color: bg }}
+                  />
+                </div>
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

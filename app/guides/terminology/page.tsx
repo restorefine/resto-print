@@ -14,13 +14,13 @@ const Illustrations: Record<string, () => React.ReactElement> = {
   Bleed: () => (
     <svg viewBox="0 0 72 72" fill="none" className="w-full h-full">
       {/* Bleed area */}
-      <rect x="4" y="4" width="64" height="64" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="4 2" />
+      <rect x="4" y="4" width="64" height="64" stroke="#CC0088" strokeWidth="1.5" strokeDasharray="4 2" />
       {/* Trim line */}
       <rect x="12" y="12" width="48" height="48" stroke="#09090b" strokeWidth="1.5" />
       {/* Safe zone */}
       <rect x="20" y="20" width="32" height="32" fill="#f4f4f5" stroke="#a1a1aa" strokeWidth="1" strokeDasharray="3 2" />
       {/* Labels */}
-      <text x="6" y="10" fontSize="5" fill="#dc2626" fontFamily="monospace">BLEED</text>
+      <text x="6" y="10" fontSize="5" fill="#CC0088" fontFamily="monospace">BLEED</text>
       <text x="26" y="39" fontSize="5" fill="#71717a" fontFamily="monospace" textAnchor="middle">SAFE</text>
     </svg>
   ),
@@ -63,14 +63,14 @@ const Illustrations: Record<string, () => React.ReactElement> = {
       {[0,1,2].map(r => [0,1,2].map(c => (
         <circle key={`l${r}${c}`} cx={10 + c * 9} cy={10 + r * 9} r="2.5" fill="#71717a" />
       )))}
-      <text x="19" y="42" fontSize="5.5" fill="#dc2626" textAnchor="middle" fontFamily="monospace">LOW DPI</text>
+      <text x="19" y="42" fontSize="5.5" fill="#CC0088" textAnchor="middle" fontFamily="monospace">LOW DPI</text>
 
       {/* High DPI — dense dots */}
       <rect x="38" y="4" width="30" height="30" fill="#f4f4f5" stroke="#d4d4d8" strokeWidth="1" />
       {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
         <circle key={`h${r}${c}`} cx={41 + c * 5.5} cy={7 + r * 5.5} r="1.3" fill="#09090b" />
       )))}
-      <text x="53" y="42" fontSize="5.5" fill="#dc2626" textAnchor="middle" fontFamily="monospace">HIGH DPI</text>
+      <text x="53" y="42" fontSize="5.5" fill="#CC0088" textAnchor="middle" fontFamily="monospace">HIGH DPI</text>
     </svg>
   ),
 
@@ -95,7 +95,7 @@ const Illustrations: Record<string, () => React.ReactElement> = {
   Pantone: () => (
     <svg viewBox="0 0 72 72" fill="none" className="w-full h-full">
       {[
-        "#dc2626","#ea580c","#ca8a04","#16a34a","#0284c7","#7c3aed","#db2777","#09090b"
+        "#CC0088","#ea580c","#ca8a04","#16a34a","#0284c7","#7c3aed","#db2777","#09090b"
       ].map((c, i) => (
         <g key={c}>
           <rect x={4 + i * 8} y="8" width="7" height="50" fill={c} />
@@ -114,7 +114,7 @@ const Illustrations: Record<string, () => React.ReactElement> = {
       <circle cx="36" cy="24" r="18" fill="#ef4444" opacity="0.75" />
       <circle cx="24" cy="46" r="18" fill="#22c55e" opacity="0.75" />
       <circle cx="48" cy="46" r="18" fill="#3b82f6" opacity="0.75" />
-      <text x="36" y="10" fontSize="5" fill="#dc2626" textAnchor="middle" fontWeight="bold">R</text>
+      <text x="36" y="10" fontSize="5" fill="#CC0088" textAnchor="middle" fontWeight="bold">R</text>
       <text x="16" y="66" fontSize="5" fill="#16a34a" textAnchor="middle" fontWeight="bold">G</text>
       <text x="56" y="66" fontSize="5" fill="#2563eb" textAnchor="middle" fontWeight="bold">B</text>
     </svg>
@@ -122,11 +122,11 @@ const Illustrations: Record<string, () => React.ReactElement> = {
 
   "Safe Zone": () => (
     <svg viewBox="0 0 72 72" fill="none" className="w-full h-full">
-      <rect x="4" y="4" width="64" height="64" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="4 2" />
+      <rect x="4" y="4" width="64" height="64" stroke="#CC0088" strokeWidth="1.5" strokeDasharray="4 2" />
       <rect x="12" y="12" width="48" height="48" stroke="#09090b" strokeWidth="1.5" />
       <rect x="20" y="20" width="32" height="32" fill="#f4f4f5" stroke="#a1a1aa" strokeWidth="1" strokeDasharray="3 2" />
       <text x="36" y="39" fontSize="5" fill="#71717a" textAnchor="middle" fontFamily="monospace">SAFE</text>
-      <text x="5" y="10" fontSize="4.5" fill="#dc2626" fontFamily="monospace">BLEED</text>
+      <text x="5" y="10" fontSize="4.5" fill="#CC0088" fontFamily="monospace">BLEED</text>
       <text x="13" y="26" fontSize="4.5" fill="#09090b" fontFamily="monospace">TRIM</text>
     </svg>
   ),
@@ -136,12 +136,12 @@ const Illustrations: Record<string, () => React.ReactElement> = {
       {/* Document */}
       <rect x="12" y="8" width="48" height="56" fill="#f4f4f5" stroke="#d4d4d8" strokeWidth="1.5" />
       {/* Cut lines */}
-      <line x1="12" y1="36" x2="60" y2="36" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="4 2" />
+      <line x1="12" y1="36" x2="60" y2="36" stroke="#CC0088" strokeWidth="1.5" strokeDasharray="4 2" />
       {/* Scissors icon approximate */}
-      <circle cx="8" cy="33" r="3" fill="none" stroke="#dc2626" strokeWidth="1.5" />
-      <circle cx="8" cy="39" r="3" fill="none" stroke="#dc2626" strokeWidth="1.5" />
-      <line x1="10" y1="34.5" x2="60" y2="36" stroke="#dc2626" strokeWidth="1" opacity="0.4" />
-      <line x1="10" y1="37.5" x2="60" y2="36" stroke="#dc2626" strokeWidth="1" opacity="0.4" />
+      <circle cx="8" cy="33" r="3" fill="none" stroke="#CC0088" strokeWidth="1.5" />
+      <circle cx="8" cy="39" r="3" fill="none" stroke="#CC0088" strokeWidth="1.5" />
+      <line x1="10" y1="34.5" x2="60" y2="36" stroke="#CC0088" strokeWidth="1" opacity="0.4" />
+      <line x1="10" y1="37.5" x2="60" y2="36" stroke="#CC0088" strokeWidth="1" opacity="0.4" />
       {/* Dimension arrows */}
       <line x1="12" y1="70" x2="60" y2="70" stroke="#09090b" strokeWidth="1" />
       <polygon points="12,68 12,72 8,70" fill="#09090b" />
@@ -185,7 +185,7 @@ const Illustrations: Record<string, () => React.ReactElement> = {
 
   Overprint: () => (
     <svg viewBox="0 0 72 72" fill="none" className="w-full h-full">
-      <rect x="8" y="20" width="36" height="32" fill="#dc2626" rx="2" />
+      <rect x="8" y="20" width="36" height="32" fill="#CC0088" rx="2" />
       <rect x="28" y="20" width="36" height="32" fill="#09090b" rx="2" opacity="0.85" />
       {/* Overlap area highlight */}
       <rect x="28" y="20" width="16" height="32" fill="#7f1d1d" rx="0" />
@@ -215,14 +215,14 @@ const Illustrations: Record<string, () => React.ReactElement> = {
       {/* Smooth bezier curve */}
       <path d="M 8 56 C 20 10, 52 10, 64 56" stroke="#09090b" strokeWidth="2" fill="none" />
       {/* Control point handles */}
-      <line x1="8" y1="56" x2="20" y2="10" stroke="#dc2626" strokeWidth="1" strokeDasharray="3 2" />
-      <line x1="64" y1="56" x2="52" y2="10" stroke="#dc2626" strokeWidth="1" strokeDasharray="3 2" />
+      <line x1="8" y1="56" x2="20" y2="10" stroke="#CC0088" strokeWidth="1" strokeDasharray="3 2" />
+      <line x1="64" y1="56" x2="52" y2="10" stroke="#CC0088" strokeWidth="1" strokeDasharray="3 2" />
       {/* Anchor points */}
       <rect x="5" y="53" width="6" height="6" fill="white" stroke="#09090b" strokeWidth="1.5" />
       <rect x="61" y="53" width="6" height="6" fill="white" stroke="#09090b" strokeWidth="1.5" />
       {/* Control points */}
-      <circle cx="20" cy="10" r="3" fill="#dc2626" />
-      <circle cx="52" cy="10" r="3" fill="#dc2626" />
+      <circle cx="20" cy="10" r="3" fill="#CC0088" />
+      <circle cx="52" cy="10" r="3" fill="#CC0088" />
       <text x="36" y="68" fontSize="5" fill="#71717a" textAnchor="middle" fontFamily="monospace">SCALABLE</text>
     </svg>
   ),
@@ -240,9 +240,9 @@ const Illustrations: Record<string, () => React.ReactElement> = {
         })
       )}
       {/* Magnify circle overlay */}
-      <circle cx="52" cy="52" r="16" fill="none" stroke="#dc2626" strokeWidth="2" />
-      <line x1="63" y1="63" x2="70" y2="70" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" />
-      <text x="36" y="70" fontSize="5" fill="#dc2626" textAnchor="middle" fontFamily="monospace">PIXELATED</text>
+      <circle cx="52" cy="52" r="16" fill="none" stroke="#CC0088" strokeWidth="2" />
+      <line x1="63" y1="63" x2="70" y2="70" stroke="#CC0088" strokeWidth="2.5" strokeLinecap="round" />
+      <text x="36" y="70" fontSize="5" fill="#CC0088" textAnchor="middle" fontFamily="monospace">PIXELATED</text>
     </svg>
   ),
 };
@@ -252,8 +252,8 @@ function DefaultIllustration({ term }: { term: string }) {
   const initials = term.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
   return (
     <svg viewBox="0 0 72 72" fill="none" className="w-full h-full">
-      <rect x="4" y="4" width="64" height="64" stroke="#e4e4e7" strokeWidth="1.5" />
-      <text x="36" y="42" fontSize="20" fill="#d4d4d8" textAnchor="middle" fontWeight="900" fontFamily="sans-serif">
+      <rect x="4" y="4" width="64" height="64" stroke="#e8e7e2" strokeWidth="1.5" />
+      <text x="36" y="42" fontSize="20" fill="#e8e7e2" textAnchor="middle" fontWeight="900" fontFamily="sans-serif">
         {initials}
       </text>
     </svg>
@@ -272,10 +272,10 @@ export default function TerminologyPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white text-[#09090b] overflow-x-hidden">
+      <main className="bg-white text-[#0f0f0f] overflow-x-hidden">
 
         {/* Hero */}
-        <section className="bg-[#131313] pt-40 pb-24 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        <section className="bg-white pt-40 pb-16 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <Breadcrumb crumbs={[
               { label: "Home", href: "/" },
@@ -284,18 +284,18 @@ export default function TerminologyPage() {
             ]} />
           </motion.div>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4">
+            className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-4">
             Guide · Glossary
           </motion.p>
           <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none mb-6">
+            className="text-5xl sm:text-7xl font-black text-[#0f0f0f] uppercase tracking-tight leading-none mb-6">
             Print{" "}
-            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
               Terminology
             </em>
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={3}
-            className="text-zinc-400 text-base max-w-xl leading-relaxed">
+            className="text-[#71717a] text-base max-w-xl leading-relaxed">
             Bleed, CMYK, DPI, GSM — every print term you&rsquo;ll ever encounter, explained in plain English with a visual.
           </motion.p>
           {/* Letter index */}
@@ -303,7 +303,7 @@ export default function TerminologyPage() {
             className="flex flex-wrap gap-2 mt-10">
             {letters.map((l) => (
               <a key={l} href={`#letter-${l}`}
-                className="w-8 h-8 flex items-center justify-center text-[10px] font-black uppercase border border-zinc-700 text-zinc-400 hover:border-white hover:text-white transition-colors">
+                className="w-8 h-8 flex items-center justify-center text-[10px] font-black uppercase border border-[#e8e7e2] text-[#71717a] hover:border-[#0f0f0f] hover:text-[#0f0f0f] transition-colors">
                 {l}
               </a>
             ))}
@@ -319,8 +319,8 @@ export default function TerminologyPage() {
                 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
                 className="flex items-center gap-4 mb-8"
               >
-                <span className="text-5xl font-black text-zinc-100 select-none leading-none">{letter}</span>
-                <div className="flex-1 h-px bg-zinc-100" />
+                <span className="text-5xl font-black text-[#e8e7e2] select-none leading-none">{letter}</span>
+                <div className="flex-1 h-px bg-[#e8e7e2]" />
               </motion.div>
 
               {/* Cards grid */}
@@ -332,16 +332,16 @@ export default function TerminologyPage() {
                       key={t.term}
                       variants={fadeUp} initial="hidden" whileInView="show"
                       viewport={{ once: true, margin: "-40px" }} custom={i * 0.15}
-                      className="border border-zinc-100 flex flex-col gap-5 p-6 hover:border-zinc-300 transition-colors"
+                      className="border border-[#e8e7e2] flex flex-col gap-5 p-6 hover:border-[#0f0f0f] transition-colors"
                     >
                       {/* Illustration box */}
                       <div className="w-36 h-36 shrink-0">
-                        {Illus ? <Illus /> : null}
+                        {Illus ? <Illus /> : <DefaultIllustration term={t.term} />}
                       </div>
                       {/* Term + definition */}
                       <div>
-                        <p className="font-black text-base uppercase tracking-tight text-[#dc2626] mb-2">{t.term}</p>
-                        <p className="text-base text-zinc-500 leading-relaxed">{t.def}</p>
+                        <p className="font-black text-base uppercase tracking-tight text-[#CC0088] mb-2">{t.term}</p>
+                        <p className="text-base text-[#71717a] leading-relaxed">{t.def}</p>
                       </div>
                     </motion.div>
                   );
@@ -352,12 +352,12 @@ export default function TerminologyPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#131313] py-16 px-6 sm:px-14 lg:px-52 border-t border-zinc-800">
+        <section className="bg-[#f5f4f0] py-16 px-6 sm:px-14 lg:px-52 border-t border-[#e8e7e2]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="text-zinc-400 text-sm max-w-md">
-              Still confused? <strong className="text-white">Just ask us — we speak plain English.</strong>
+            <p className="text-[#71717a] text-sm max-w-md">
+              Still confused? <strong className="text-[#0f0f0f]">Just ask us — we speak plain English.</strong>
             </p>
-            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-white text-[#09090b] hover:bg-zinc-200 transition-colors">
+            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-[#0f0f0f] text-white hover:bg-zinc-800 transition-colors">
               Get a Quote
             </Link>
           </div>

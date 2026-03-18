@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, ClipboardList, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { steps, fadeUp, WHATSAPP_URL } from "@/lib/constants";
+import { steps, fadeUp, WHATSAPP_URL, CMYK } from "@/lib/constants";
 import SectionLabel from "@/components/SectionLabel";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
@@ -16,7 +16,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="bg-[#131313] px-6 sm:px-14 lg:px-52 py-24 border-t border-zinc-800"
+      className="bg-[#0f0f0f] px-6 sm:px-14 lg:px-52 py-24 border-t border-zinc-800"
     >
       <SectionLabel num="03" label="The Process" light />
 
@@ -28,7 +28,7 @@ export default function HowItWorks() {
       >
         How to{" "}
         <span
-          className="font-normal italic text-[#dc2626]"
+          className="font-normal italic text-[#CC0088]"
           style={{ fontFamily: "'Times New Roman', Times, serif" }}
         >
           Order
@@ -40,6 +40,7 @@ export default function HowItWorks() {
         {steps.map((step, i) => {
           const Icon = stepIcons[i];
           const isActive = activeStep === i;
+          const color = CMYK[i]; // C → M → Y per step
 
           return (
             <motion.button
@@ -49,43 +50,43 @@ export default function HowItWorks() {
               variants={fadeUp} custom={i * 0.15}
               onMouseEnter={() => setActiveStep(i)}
               onMouseLeave={() => setActiveStep(null)}
-              className={`text-left group relative flex flex-col gap-6 p-8 lg:p-10 transition-colors ${
-                isActive ? "bg-[#dc2626]" : "bg-[#1a1a1a]"
-              }`}
+              className="text-left group relative flex flex-col gap-6 p-8 lg:p-10 transition-colors bg-[#1a1a1a]"
+              style={{ backgroundColor: isActive ? color : undefined }}
             >
               {/* Background number */}
               <span
-                className={`absolute right-6 top-4 text-8xl font-black select-none leading-none transition-colors ${
-                  isActive ? "text-red-700/40" : "text-zinc-800 group-hover:text-zinc-700"
-                }`}
+                className="absolute right-6 top-4 text-8xl font-black select-none leading-none transition-colors text-zinc-800"
+                style={{ color: isActive ? `${color}55` : undefined }}
               >
                 {step.num}
               </span>
 
               {/* Icon */}
-              <div className={`relative z-10 w-10 h-10 flex items-center justify-center border transition-colors ${
-                isActive
-                  ? "border-red-400/40 text-white"
-                  : "border-zinc-700 text-zinc-500 group-hover:border-zinc-500 group-hover:text-zinc-300"
-              }`}>
+              <div
+                className="relative z-10 w-10 h-10 flex items-center justify-center border transition-colors border-zinc-700 text-zinc-500"
+                style={isActive ? { borderColor: `${color}66`, color: i === 2 ? "#131313" : "#fff" } : undefined}
+              >
                 <Icon size={18} strokeWidth={1.5} />
               </div>
 
               {/* Content */}
               <div className="relative z-10 flex flex-col gap-3">
-                <span className={`text-[10px] uppercase tracking-[0.3em] transition-colors ${
-                  isActive ? "text-red-200" : "text-zinc-600"
-                }`}>
+                <span
+                  className="text-[10px] uppercase tracking-[0.3em] transition-colors text-zinc-600"
+                  style={isActive ? { color: i === 2 ? "#131313" : "#ffffffaa" } : undefined}
+                >
                   Step {step.num} of {steps.length}
                 </span>
-                <h3 className={`font-black uppercase tracking-tight text-xl leading-tight transition-colors ${
-                  isActive ? "text-white" : "text-zinc-100"
-                }`}>
+                <h3
+                  className="font-black uppercase tracking-tight text-xl leading-tight transition-colors text-zinc-100"
+                  style={isActive ? { color: i === 2 ? "#131313" : "#ffffff" } : undefined}
+                >
                   {step.title}
                 </h3>
-                <p className={`text-sm leading-relaxed transition-colors ${
-                  isActive ? "text-red-100" : "text-zinc-500"
-                }`}>
+                <p
+                  className="text-sm leading-relaxed transition-colors text-zinc-500"
+                  style={isActive ? { color: i === 2 ? "#333" : "#ffffffbb" } : undefined}
+                >
                   {step.desc}
                 </p>
               </div>
@@ -94,18 +95,18 @@ export default function HowItWorks() {
               {i === 0 && (
                 <Link
                   href="/order"
-                  className={`relative z-10 self-start inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-black transition-colors ${
-                    isActive ? "text-white" : "text-zinc-500 group-hover:text-white"
-                  }`}
+                  className="relative z-10 self-start inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-black transition-colors text-zinc-500"
+                  style={isActive ? { color: "#fff" } : undefined}
                 >
                   Start Here <ArrowRight size={11} />
                 </Link>
               )}
 
               {/* Bottom indicator */}
-              <div className={`relative z-10 mt-auto h-0.5 w-8 transition-colors ${
-                isActive ? "bg-red-300" : "bg-zinc-700 group-hover:bg-zinc-500"
-              }`} />
+              <div
+                className="relative z-10 mt-auto h-0.5 w-8 transition-all bg-zinc-700"
+                style={isActive ? { background: i === 2 ? "#131313" : "#ffffff55", width: "3rem" } : undefined}
+              />
             </motion.button>
           );
         })}
@@ -127,7 +128,7 @@ export default function HowItWorks() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 inline-flex items-center gap-3 bg-white text-[#09090b] font-black uppercase tracking-widest text-[11px] px-8 py-4 hover:bg-zinc-200 transition-colors"
+          className="shrink-0 inline-flex items-center gap-3 bg-white text-[#0f0f0f] font-black uppercase tracking-widest text-[11px] px-8 py-4 hover:bg-zinc-200 transition-colors"
         >
           <WhatsAppIcon size={16} />
           Start Your Order

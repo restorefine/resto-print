@@ -52,27 +52,27 @@ function PaperRect({ name, i }: { name: string; i: number }) {
         {/* ── Width dimension line ── */}
         {/* Label */}
         <span
-          className="absolute text-[9px] font-mono text-zinc-500"
+          className="absolute text-[9px] font-mono text-[#71717a]"
           style={{ top: 0, left: 0, width: wPx, textAlign: "center" }}
         >
           {wIn}&Prime;
         </span>
         {/* Horizontal rule */}
         <div
-          className="absolute bg-zinc-300"
+          className="absolute bg-[#e8e7e2]"
           style={{ top: LABEL_TOP - 10, left: 0, width: wPx, height: 1 }}
         />
         {/* Left tick */}
-        <div className="absolute bg-zinc-300" style={{ top: LABEL_TOP - 13, left: 0, width: 1, height: 7 }} />
+        <div className="absolute bg-[#e8e7e2]" style={{ top: LABEL_TOP - 13, left: 0, width: 1, height: 7 }} />
         {/* Right tick */}
-        <div className="absolute bg-zinc-300" style={{ top: LABEL_TOP - 13, left: wPx - 1, width: 1, height: 7 }} />
+        <div className="absolute bg-[#e8e7e2]" style={{ top: LABEL_TOP - 13, left: wPx - 1, width: 1, height: 7 }} />
 
         {/* ── Rectangle ── */}
         <div
-          className="absolute border-2 border-[#09090b] bg-zinc-50 flex items-center justify-center"
+          className="absolute border-2 border-[#0f0f0f] bg-[#f5f4f0] flex items-center justify-center"
           style={{ top: LABEL_TOP, left: 0, width: wPx, height: hPx }}
         >
-          <span className="font-black text-[#09090b] uppercase tracking-tight select-none"
+          <span className="font-black text-[#0f0f0f] uppercase tracking-tight select-none"
             style={{ fontSize }}>
             {name}
           </span>
@@ -81,17 +81,17 @@ function PaperRect({ name, i }: { name: string; i: number }) {
         {/* ── Height dimension line ── */}
         {/* Vertical rule */}
         <div
-          className="absolute bg-zinc-300"
+          className="absolute bg-[#e8e7e2]"
           style={{ top: LABEL_TOP, left: wPx + 10, width: 1, height: hPx }}
         />
         {/* Top tick */}
-        <div className="absolute bg-zinc-300" style={{ top: LABEL_TOP, left: wPx + 7, width: 7, height: 1 }} />
+        <div className="absolute bg-[#e8e7e2]" style={{ top: LABEL_TOP, left: wPx + 7, width: 7, height: 1 }} />
         {/* Bottom tick */}
-        <div className="absolute bg-zinc-300" style={{ top: LABEL_TOP + hPx - 1, left: wPx + 7, width: 7, height: 1 }} />
+        <div className="absolute bg-[#e8e7e2]" style={{ top: LABEL_TOP + hPx - 1, left: wPx + 7, width: 7, height: 1 }} />
         {/* Label — only if tall enough */}
         {showHLabel && (
           <span
-            className="absolute text-[9px] font-mono text-zinc-500"
+            className="absolute text-[9px] font-mono text-[#71717a]"
             style={{
               top: LABEL_TOP,
               left: wPx + 16,
@@ -110,8 +110,8 @@ function PaperRect({ name, i }: { name: string; i: number }) {
 
       {/* Size name + inches below */}
       <div className="flex flex-col gap-0.5">
-        <span className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-medium">{name}</span>
-        <span className="text-[9px] font-mono text-zinc-400">{wIn} × {hIn}&Prime;</span>
+        <span className="text-[9px] uppercase tracking-[0.2em] text-[#71717a] font-medium">{name}</span>
+        <span className="text-[9px] font-mono text-[#71717a]">{wIn} × {hIn}&Prime;</span>
       </div>
     </motion.div>
   );
@@ -123,10 +123,10 @@ export default function SizesGuidePage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white text-[#09090b] overflow-x-hidden">
+      <main className="bg-white text-[#0f0f0f] overflow-x-hidden">
 
         {/* Hero */}
-        <section className="bg-[#131313] pt-40 pb-24 px-6 sm:px-14 lg:px-52 border-b border-zinc-800">
+        <section className="bg-white pt-40 pb-16 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <Breadcrumb crumbs={[
               { label: "Home", href: "/" },
@@ -135,26 +135,26 @@ export default function SizesGuidePage() {
             ]} />
           </motion.div>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-4">
+            className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-4">
             Guide · Print Sizes
           </motion.p>
           <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none mb-6">
+            className="text-5xl sm:text-7xl font-black text-[#0f0f0f] uppercase tracking-tight leading-none mb-6">
             Size{" "}
-            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#dc2626]">
+            <em style={{ fontFamily: "'Times New Roman', Times, serif", fontStyle: "italic" }} className="text-[#CC0088]">
               Guide
             </em>
           </motion.h1>
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={3}
-            className="text-zinc-400 text-base max-w-xl leading-relaxed">
+            className="text-[#71717a] text-base max-w-xl leading-relaxed">
             A complete reference for standard UK print sizes — with exact dimensions in inches and common applications.
           </motion.p>
         </section>
 
         {/* A-series visual comparison */}
-        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-zinc-100 overflow-x-auto">
+        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2] overflow-x-auto bg-[#f5f4f0]">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-3">A-Series</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-3">A-Series</p>
             <h2 className="text-2xl font-black uppercase tracking-tight mb-16">Visual Comparison</h2>
           </motion.div>
           <div className="flex items-end gap-6 pb-6 min-w-max">
@@ -165,12 +165,12 @@ export default function SizesGuidePage() {
         </section>
 
         {/* Full sizes table — in inches */}
-        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-zinc-100">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#dc2626] mb-8">All Sizes</p>
+        <section className="py-20 px-6 sm:px-14 lg:px-52 border-b border-[#e8e7e2]">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#0099CC] mb-8">All Sizes</p>
 
-          <div className="hidden sm:grid grid-cols-4 gap-4 pb-4 border-b border-zinc-200 mb-2">
+          <div className="hidden sm:grid grid-cols-4 gap-4 pb-4 border-b border-[#e8e7e2] mb-2">
             {["Size", "Inches (W × H)", "Millimetres", "Common Use"].map((h) => (
-              <span key={h} className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">{h}</span>
+              <span key={h} className="text-[10px] uppercase tracking-[0.25em] text-[#71717a]">{h}</span>
             ))}
           </div>
 
@@ -186,23 +186,23 @@ export default function SizesGuidePage() {
                 key={s.name}
                 variants={fadeUp} initial="hidden" whileInView="show"
                 viewport={{ once: true, margin: "-40px" }} custom={i * 0.15}
-                className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 py-5 border-b border-zinc-100 last:border-0"
+                className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 py-5 border-b border-[#e8e7e2] last:border-0"
               >
                 <div>
-                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-1">Size</p>
+                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-1">Size</p>
                   <p className="font-black text-base uppercase tracking-tight">{s.name}</p>
                 </div>
                 <div>
-                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-1">Inches</p>
-                  <p className="text-sm font-mono text-zinc-700">{inchStr}</p>
+                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-1">Inches</p>
+                  <p className="text-sm font-mono text-[#71717a]">{inchStr}</p>
                 </div>
                 <div>
-                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-1">Millimetres</p>
-                  <p className="text-sm font-mono text-zinc-400">{s.dimensions}</p>
+                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-1">Millimetres</p>
+                  <p className="text-sm font-mono text-[#71717a]">{s.dimensions}</p>
                 </div>
                 <div>
-                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-1">Common Use</p>
-                  <p className="text-sm text-zinc-500">{s.common}</p>
+                  <p className="sm:hidden text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-1">Common Use</p>
+                  <p className="text-sm text-[#71717a]">{s.common}</p>
                 </div>
               </motion.div>
             );
@@ -210,12 +210,12 @@ export default function SizesGuidePage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#131313] py-16 px-6 sm:px-14 lg:px-52 border-t border-zinc-800">
+        <section className="bg-[#f5f4f0] py-16 px-6 sm:px-14 lg:px-52 border-t border-[#e8e7e2]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="text-zinc-400 text-sm max-w-md">
-              Need a custom size? <strong className="text-white">We print to any dimension.</strong>
+            <p className="text-[#71717a] text-sm max-w-md">
+              Need a custom size? <strong className="text-[#0f0f0f]">We print to any dimension.</strong>
             </p>
-            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-white text-[#09090b] hover:bg-zinc-200 transition-colors">
+            <Link href="/order" className="shrink-0 font-black uppercase tracking-widest text-[11px] px-8 py-4 bg-[#0f0f0f] text-white hover:bg-zinc-800 transition-colors">
               Get a Quote
             </Link>
           </div>

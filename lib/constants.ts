@@ -1,6 +1,11 @@
 export const WHATSAPP_NUMBER = "447700000000";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%27d%20like%20a%20printing%20quote!`;
 
+// Authentic CMYK printing colours — C · M · Y · K
+export const CMYK = ["#0099CC", "#CC0088", "#DDAA00", "#131313"] as const;
+// Readable text on CMYK bg: white for C/M/K, black for Y
+export const CMYK_TEXT = ["#ffffff", "#ffffff", "#131313", "#ffffff"] as const;
+
 export const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   show: (i = 0) => ({
