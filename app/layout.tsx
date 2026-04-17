@@ -98,9 +98,6 @@ export const metadata: Metadata = {
       "High-quality printing for restaurants, cafés, hotels and businesses across the UK.",
     images: ["/og-image.png"],
   },
-  alternates: {
-    canonical: BASE,
-  },
   category: "Printing Services",
 };
 
