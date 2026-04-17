@@ -102,9 +102,6 @@ export const metadata: Metadata = {
     canonical: BASE,
   },
   category: "Printing Services",
-  verification: {
-    google: "ZfluDLwYK-yqkWpedZvsk7g0NSbL30_AOjIuzdrbJSY",
-  },
 };
 
 export default function RootLayout({
