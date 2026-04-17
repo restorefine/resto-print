@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /_next/
-
-Sitemap: https://restoprint.co.uk/sitemap.xml
-Host: https://restoprint.co.uk

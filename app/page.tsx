@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/components/HeroV2";
 import Services from "@/components/Services";
 import WhyRestoPrint from "@/components/WhyRestoPrint";
 import IndustriesStrip from "@/components/IndustriesStrip";
